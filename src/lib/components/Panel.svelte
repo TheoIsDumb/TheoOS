@@ -1,25 +1,48 @@
 <script>
-    import Hello from '/src/routes/apps/Hello.svelte';
+    import Menu from './Menu.svelte';
+    import Date from './Date.svelte';
+    import Shutdown from './Shutdown.svelte';
 
     import Icon from "@iconify/svelte";
-    let date;
 
     export let openedApps;
 
-    setInterval(() => {
-        date = new Date().toLocaleString('en-US', {hour12: false})
-    }, 1000);
+    let menu = false;
+    let shutdown = false;
+
+    function openMenu() {
+        menu = !menu;
+
+        if (menu === true) {
+            openedApps = [...openedApps, Menu]
+        } else {
+            openedApps = openedApps.filter((item) => {
+                return item !== Menu;
+            })
+            openedApps = openedApps;
+        }
+    }
+
+    function openShutdown() {
+        shutdown = !shutdown;
+
+        if (shutdown === true) {
+            openedApps = [...openedApps, Shutdown]
+        } 
+    }
 </script>
 
 <div class="taskbar">
     <div class="inner-container">
-        <button on:click={() => {openedApps = [...openedApps, Hello]}}>
+        <button on:click={openMenu}>
             <Icon icon="cib:arch-linux"/>
         </button>
 
-        <span>{date}</span>
+        <Date/>
 
-        <Icon icon="icons8:shutdown"/>
+        <button on:click={openShutdown}>
+            <Icon icon="icons8:shutdown"/>
+        </button>
     </div>
 </div>
 

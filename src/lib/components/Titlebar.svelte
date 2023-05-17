@@ -1,4 +1,5 @@
 <script>
+    export let title = "App";
     function handle(e) {
         e.target.parentNode.parentNode.parentNode.remove()
     }
@@ -6,7 +7,7 @@
 
 <div class="titlebar">
     <div class="inner">
-        <span>hehe</span>
+        <span>{title}</span>
         <button on:click={handle}>×</button>
     </div>
 </div>

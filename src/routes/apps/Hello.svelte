@@ -1,27 +1,24 @@
 <script>
-    import { draggable } from '@neodrag/svelte';
-    import Titlebar from '$lib/components/Titlebar.svelte';
+    import App from "$lib/components/App.svelte";
+    import Titlebar from "$lib/components/Titlebar.svelte";
+
+    let title = "Hello"
 </script>
 
-<div class="app"
-    use:draggable={{ bounds: {top: 30, right: 0, left: 0, bottom: 0},
-    defaultPosition: {x: 100, y: 100 },
-    handle: '.titlebar' }}>
-    <Titlebar/>
-    hello
-</div>
+<App>
+    <Titlebar {title}/>
+    <div>
+        hello
+    </div>
+</App>
 
 <style>
-    div.app {
-        color: white;
-        background: #6d139e;
-        height: 20rem;
-        width: 20rem;
+    div {
+        height: inherit;
+        width: inherit;
         display: flex;
         justify-content: center;
         align-items: center;
-        resize: both;
-        overflow: auto;
-        border-radius: 0.3rem !important;
+        background-color: #131313;
     }
 </style>
