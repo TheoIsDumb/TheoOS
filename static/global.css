@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+}
+
+main.container {
+    width: 100dvw;
+    height: 100dvh;
+    background-image: url("wall.webp");
+    background-size: cover;
+}
