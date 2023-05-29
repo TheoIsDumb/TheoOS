@@ -1,24 +1,33 @@
 <script>
+    export let backgroundColor = "#131313";
+    export let color = "white";
+    export let height = "30rem";
+    export let width = "25rem";
+    export let inset = "25%";
+
+    import { scale, fade } from 'svelte/transition';
     import { draggable } from '@neodrag/svelte';
-    import { fade } from 'svelte/transition';
 </script>
 
-<div class="app"
-    use:draggable={{ bounds: {top: 30, right: 0, left: 0, bottom: 0},
-    defaultPosition: {x: 100, y: 100 },
-    handle: '.titlebar' }}
-    transition:fade
-    >
-    <slot/>
+<div
+    in:scale
+    out:fade={{ duration: 400 }}
+    use:draggable={{ handle: '.titlebar '}}
+    style:background-color={backgroundColor}
+    style:color={color}
+    style:height={height}
+    style:width={width}
+    style:inset={inset}
+    id="parent">
+    <slot />
 </div>
 
 <style>
-    div.app {
-        color: white;
-        height: 20rem;
-        width: 20rem;
+    div#parent {
         resize: both;
-        overflow: auto;
+        overflow: hidden;
+        position: absolute;
+        box-shadow: 0 0 0.8rem darkslategray;
         border-radius: 0.5rem !important;
     }
 </style>

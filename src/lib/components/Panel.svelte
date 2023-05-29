@@ -1,71 +1,66 @@
 <script>
-    import Menu from './Menu.svelte';
+    import { openedApps } from '../store';
+    import Launcher from './Launcher.svelte';
     import Date from './Date.svelte';
     import Shutdown from './Shutdown.svelte';
 
     import Icon from "@iconify/svelte";
 
-    export let openedApps;
-
-    let menu = false;
-    let shutdown = false;
-
-    function openMenu() {
-        menu = !menu;
-
-        if (menu === true) {
-            openedApps = [...openedApps, Menu]
-        } else {
-            openedApps = openedApps.filter((item) => {
-                return item !== Menu;
-            })
-            openedApps = openedApps;
-        }
+    const check = (appName) => {
+        for (let i=0; i<$openedApps.length; i++) {
+            if ($openedApps[i].id === appName) {
+                return false;
+                }
+            }
     }
 
-    function openShutdown() {
-        shutdown = !shutdown;
-
-        if (shutdown === true) {
-            openedApps = [...openedApps, Shutdown]
-        } 
+    const openApp = (App, Name) => {
+        if ($openedApps.length === 0 || check(Name) !== false) {
+            $openedApps = [...$openedApps, {id: Name, app: App}];
+        } else {
+            $openedApps = $openedApps.filter((item) => item.id !== Name);
+        }
     }
 </script>
 
-<div class="taskbar">
-    <div class="inner-container">
-        <button on:click={openMenu}>
-            <Icon icon="cib:arch-linux"/>
+<div class="panel flex flex-jc flex-ac">
+    <div class="inner-container flex flex-ac">
+        <button on:click={() => {openApp(Launcher, "Launcher")}}>
+            <Icon icon="ph:circle-bold"/>
         </button>
 
         <Date/>
 
-        <button on:click={openShutdown}>
-            <Icon icon="icons8:shutdown"/>
+        <button on:click={() => {openApp(Shutdown, "Shutdown")}}>
+            <Icon icon="fa-solid:power-off"/>
         </button>
     </div>
 </div>
 
 <style>
-    div.taskbar {
+    div.panel {
         background-color: #100f0f61;
-        height: 1.8rem;
+        height: 2.1rem;
         width: 100dvw;
         position: fixed;
         top: 0;
         backdrop-filter: blur(10px);
         color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     div.inner-container {
         width: 96%;
-        display: flex;
         justify-content: space-between;
-        align-items: center;
     }
     button {
         all: unset;
+        width: 1rem;
+        height: 1rem;
+    }
+    div.panel :global(svg) {
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    div.panel :global(svg:hover) {
+        filter: drop-shadow(0 0 0.3rem white);
     }
 </style>

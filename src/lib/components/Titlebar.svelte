@@ -1,36 +1,34 @@
 <script>
+    import { openedApps } from "../store";
+
     export let title = "App";
-    function handle(e) {
-        e.target.parentNode.parentNode.parentNode.remove()
+
+    const closeApp = () => {
+        $openedApps = $openedApps.filter((item) => item.id !== title);
     }
 </script>
 
-<div class="titlebar">
-    <div class="inner">
+<div class="titlebar flex">
+        <button on:click={closeApp}>✕</button>
         <span>{title}</span>
-        <button on:click={handle}>×</button>
-    </div>
 </div>
 
 <style>
     div.titlebar {
-        position: fixed;
+        position: absolute;
         top: 0.4rem;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        cursor: default;
-    }
-    div.inner {
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-    }
-    div.titlebar:active {
+        justify-content: start;
         cursor: grab;
+        gap: 0.5rem;
+        padding-left: 0.5rem;
     }
     button {
         all: unset;
         cursor: pointer;
+        transition: 0.5s;
+    }
+    button:hover {
+        color: rgb(252, 105, 105);
     }
 </style>

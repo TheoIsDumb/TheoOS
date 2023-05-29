@@ -1,0 +1,10 @@
+- about
+- menu fullscreen   [x]
+- menu search       [x]
+- terminal
+- music             [x]
+- css grid
+- browser search    [L] (iframes - cors - csp)
+- toLowerCase       [x]
+- zindex            [x]       
+- notepad           [g]

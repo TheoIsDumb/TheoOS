@@ -1,9 +1,16 @@
 <script>
-    let date;
+    import strftime from 'strftime';
+    let date = strftime("%Y %B %d %A %T");
 
     setInterval(() => {
-        date = new Date().toLocaleString('en-US', {hour12: false})
+        date = strftime("%Y %B %d %A %T");
     }, 1000);
 </script>
 
-<span>{date}</span>
+<span style:font-weight=600>{date}</span>
+
+<style>
+    span {
+        cursor:default;
+    }
+</style>
