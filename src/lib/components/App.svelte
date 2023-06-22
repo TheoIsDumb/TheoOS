@@ -16,7 +16,8 @@
   style:background-color={backgroundColor}
   style:color
   style:height
-  style:width
+  style:width="100%"
+  style:max-width={width}
   style:inset
   id="parent"
 >
@@ -30,10 +31,6 @@
     position: absolute;
     box-shadow: 0 0 0.8rem darkslategray;
     border-radius: 0.5rem !important;
-  }
-  @media (max-width: 1000px) {
-    div#parent {
-      max-width: 96% !important;
-    }
+    overflow: auto;
   }
 </style>
