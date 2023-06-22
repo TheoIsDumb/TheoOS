@@ -11,6 +11,7 @@
                     }
                 }
     }
+
     const closeLauncher = () => {
             $openedApps = $openedApps.filter((item) => item.id !== "Launcher");
     }
