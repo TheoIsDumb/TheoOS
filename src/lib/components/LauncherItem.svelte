@@ -42,9 +42,19 @@ on:click={() => openApp(app.component, app.id)}>
         cursor: pointer;
         position: relative;
         transition: transform 0.5s;
+        border-radius: 0.3rem;
+    }
+    @media (max-width: 1000px) {
+        div.item {
+            height: 8rem;
+            width: 8rem;
+        }
     }
     div.item:hover {
         transform: scale(1.1);
+    }
+    div.item:active {
+        background-color: rgba(0, 123, 255, 0.384);
     }
     div.item span {
         position: absolute;

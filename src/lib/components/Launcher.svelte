@@ -22,17 +22,19 @@
         <LauncherItem {app} />
       {/each}
     </div>
+
+    <button on:click={closeLauncher} class="close">✕</button>
   </div>
 </div>
 
 <style>
   div.inner {
     height: 100dvh;
-    margin: 1rem 0;
+    margin: 1rem auto;
     gap: 1rem;
     overflow: auto;
     scrollbar-width: thin;
-    padding-right: 1.3rem;
+    position: relative;
   }
   span {
     text-align: center;
@@ -41,10 +43,23 @@
   }
   div.apps {
     height: 90%;
+    margin: 1px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap: 0.5rem;
+  }
+  button.close {
+    all: unset;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  button.close:hover {
+    transform: scale(1.1);
   }
   @media (max-width: 1000px) {
     div.apps {

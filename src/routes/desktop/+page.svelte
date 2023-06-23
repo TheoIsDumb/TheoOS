@@ -4,7 +4,7 @@
   import { scale } from "svelte/transition";
 </script>
 
-<div transition:scale={{ duration: 400 }}>
+<div transition:scale>
   <Panel />
 
   {#each $openedApps as openedApp}

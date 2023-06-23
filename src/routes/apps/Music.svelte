@@ -30,7 +30,7 @@
     <Titlebar {title}/>
 
     <div class="content flex flex-jc flex-ac flex-dirc">
-        <img src="divewithme.avif" alt="dive with me - song artwork">
+        <img src="/divewithme.avif" alt="dive with me - song artwork">
         <audio src="/divewithme.mp3" bind:currentTime bind:paused bind:duration/>
 
         <div class="info flex flex-dirc">

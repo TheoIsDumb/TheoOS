@@ -23,21 +23,21 @@
 
 <style>
     div#shutdown :global(svg) {
-        height: 20rem;
-        width: 20rem;
+        height: 15rem;
+        width: 15rem;
     }
 
     button {
         all: unset;
         padding: 0.3rem 1.3rem;
-        border: 1px solid white;
+        color: black;
+        background-color: white;
         border-radius: 0.2rem;
         cursor: pointer;
         transition: all 0.4s;
-        color: white;
     }
     button:hover {
-        background-color: gainsboro;
-        color: #131313;
+        background-color: dodgerblue;
+        color: white;
     }
 </style>

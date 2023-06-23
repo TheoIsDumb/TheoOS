@@ -13,4 +13,9 @@
     span {
         cursor:default;
     }
+    @media (max-width: 1000px) {
+        span {
+            font-size: 0.8rem;
+        }
+    }
 </style>

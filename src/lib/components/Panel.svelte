@@ -32,7 +32,7 @@
         <Date/>
 
         <button on:click={() => {openApp(Shutdown, "Shutdown")}}>
-            <Icon icon="fa-solid:power-off"/>
+            <Icon icon="ph:power-bold"/>
         </button>
     </div>
 </div>
@@ -62,5 +62,10 @@
     }
     div.panel :global(svg:hover) {
         filter: drop-shadow(0 0 0.3rem white);
+    }
+    @media (max-width: 1000px) {
+        div.inner-container {
+            width: 90%;
+        }
     }
 </style>
