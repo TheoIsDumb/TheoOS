@@ -1,6 +1,7 @@
 <script>
   import { openedApps } from "$lib/store.js";
   import Panel from "$lib/components/Panel.svelte";
+  import Dock from "$lib/components/Dock.svelte";
   import { scale } from "svelte/transition";
 </script>
 
@@ -11,6 +12,8 @@
     <svelte:component this={openedApp.app} />
   {/each}
 </div>
+
+<Dock/>
 
 <style>
   div {

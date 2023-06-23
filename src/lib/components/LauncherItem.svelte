@@ -4,7 +4,7 @@
     import { openedApps } from '$lib/store.js';
     import Icon from '@iconify/svelte';
 
-    export const check = (appName) => {
+    const check = (appName) => {
             for (let i=0; i<$openedApps.length; i++) {
                 if ($openedApps[i].id === appName) {
                     return false;
