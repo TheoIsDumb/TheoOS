@@ -20,7 +20,7 @@
   }
 </script>
 
-<div class="dock flex">
+<div class="dock flex flex-ac flex-jc">
   {#each $apps as app}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="dock_item"
@@ -33,14 +33,10 @@
 <style>
   div.dock {
     position: fixed;
-    bottom: 1rem;
     gap: 1rem;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: rgba(255, 255, 255, 0.196);
+    background-color: rgba(142, 142, 142, 0.301);
     backdrop-filter: blur(2px);
     padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
     overflow: auto;
   }
   div.dock_item {
@@ -52,5 +48,19 @@
   :global(div.dock_item svg) {
     height: 2rem;
     width: 2rem;
+  }
+  @media (max-width: 540px) {
+    div.dock {
+      bottom: 0;
+      width: 100dvw;
+    }
+  }
+  @media (min-width: 540px) {
+    div.dock {
+      bottom: 1rem;
+      left: 50%;
+      transform: translate(-50%);
+      border-radius: 0.3rem;
+    }
   }
 </style>

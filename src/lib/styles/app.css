@@ -57,6 +57,7 @@ body {
         height: 100dvh;
         width: 100dvw;
         gap: 1rem;
+        z-index: 100;
 }
 
 .dark {
