@@ -13,7 +13,8 @@
             <Logo/>
 
             <span id="title">theoOS</span>
-            <span style:font-size=0.8rem>(yes, i drew something random and called it a logo hehe)</span>
+            <span style:text-align=center style:font-size=0.8rem>(yes, i drew something random<br>
+                and called it a logo hehe)</span>
 
             <a href="https://github.com/TheoIsDumb/TheoOS"
             target="_blank" noreferrer>
