@@ -1,10 +1,20 @@
 <script>
-    import { userName } from "../lib/store";
+    import { userName } from "$lib/store";
+    import { goto } from '$app/navigation';
+
+    function jao(e) {
+        if ($userName !== "" && e.key === "Enter") {
+            goto('/desktop');
+        }
+    } 
 </script>
 
 <div class="fullscreen dark flex flex-jc flex-ac flex-dirc">
         <h1>what's your name?</h1>
-        <input type="text" bind:value={$userName} autocomplete="off">
+        <input type="text"
+        bind:value={$userName}
+        on:keypress={jao}
+        autocomplete="off">
 
         {#if $userName}
             <a href="/desktop">Go!</a>

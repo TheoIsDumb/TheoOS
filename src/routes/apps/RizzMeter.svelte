@@ -29,15 +29,15 @@
     <Titlebar {title}/>
 
     <div class="content flex flex-jc flex-ac flex-dirc">
-        {#key num}
-            <span id="num">{num}</span>
-        {/key}
+        <span id="num">{num}</span>
 
         <label for="name">Enter name:<br>
             <input type="text" for="name" bind:value={name}>
         </label>
 
         <button on:click={calc}>Find Rizz!</button>
+
+        <sup>Hint: Enter Ram/Theo</sup>
     </div>
 </App>
 
@@ -65,5 +65,6 @@
         border: 0;
         border-radius: 0.3rem;
         padding: 0.2rem 1.3rem;
+        cursor: pointer;
     }
 </style>
