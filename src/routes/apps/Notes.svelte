@@ -2,26 +2,24 @@
     import Titlebar from "$lib/components/Titlebar.svelte";
     import App from "$lib/components/App.svelte";
 
-    let title = "Notes"
-    let data = localStorage.getItem('data');
+    let title = "Notes";
+    let data = localStorage.getItem("data");
 
     const AppDetails = {
-        height: "40rem",
+        height: "30rem",
         width: "35rem",
-        inset: "1rem"
-    }
+        inset: "1rem",
+    };
 
     const save = () => {
-        localStorage.setItem('data', data);
-    }
-
-    $: console.log(data)
+        localStorage.setItem("data", data);
+    };
 </script>
 
 <App {...AppDetails}>
-    <Titlebar {title}/>
+    <Titlebar {title} />
     <div class="content flex flex-jc flex-ac flex-dirc">
-        <textarea bind:value={data}></textarea>
+        <textarea bind:value={data} />
     </div>
 
     <button on:click={save}>Save</button>
@@ -31,12 +29,13 @@
     div.content {
         padding: 45px 0.2rem 0.2rem 0.2rem;
         gap: 0.2rem;
+        width: 100%;
     }
     textarea {
         height: 100%;
         width: 100%;
         background-color: transparent;
-        border: 1px solid gray;
+        border: 0;
         border-radius: inherit;
         color: white;
         outline: 0;
@@ -47,15 +46,16 @@
         position: fixed;
         top: 0.5rem;
         right: 0.5rem;
-        color: dodgerblue;
-        border: 1px solid dodgerblue;
+        color: white;
+        background-color: dodgerblue;
         border-radius: 0.3rem;
         padding: 0.2rem 0.8rem;
         font-size: 0.8rem;
         transition: all 0.3s;
+        cursor: pointer;
     }
     button:hover {
-        background-color: dodgerblue;
+        background-color: darkslateblue;
         color: white;
     }
 </style>

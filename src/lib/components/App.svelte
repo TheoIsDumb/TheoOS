@@ -12,12 +12,11 @@
 <div
   in:scale
   out:fade={{ duration: 400 }}
-  use:draggable={{ handle: ".titlebar " }}
+  use:draggable={{ handle: ".titlebar" }}
   style:background-color={backgroundColor}
   style:color
   style:height
-  style:width="100%"
-  style:max-width={width}
+  style="--lg-width: {width}"
   style:inset
   id="parent"
 >
@@ -27,10 +26,19 @@
 <style>
   div#parent {
     resize: both;
-    overflow: hidden;
     position: absolute;
     box-shadow: 0 0 0.8rem darkslategray;
     border-radius: 0.5rem !important;
     overflow: auto;
+  }
+  @media (max-width: 1000px) {
+    div#parent {
+      width: 100%;
+    }
+  }
+  @media (min-width: 1000px) {
+    div#parent {
+      width: var(--lg-width);
+    }
   }
 </style>

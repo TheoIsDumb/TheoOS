@@ -4,7 +4,7 @@
   import DockItem from "./DockItem.svelte";
 </script>
 
-<div class="dock flex flex-ac flex-jc" in:fly={{ y: 50, delay: 300 }}>
+<div class="dock flex" in:fly={{ y: 50, delay: 300 }}>
   {#each $apps as app}
     <DockItem {app} />
   {/each}
