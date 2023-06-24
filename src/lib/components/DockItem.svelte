@@ -1,5 +1,7 @@
 <script>
-  export let app;
+  export let app = "";
+  export let link = "";
+  export let linkicon = "";
 
   import { openedApps } from "$lib/store";
   import Icon from "@iconify/svelte";
@@ -31,15 +33,31 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
-  class="{bounce ? 'bounce' : ''} dock_item"
-  on:click={() => {
-    openApp(app.component, app.id);
-    bouncefunc();
-  }}
->
-  <Icon icon={app.icon} />
-</div>
+{#if app !== ""}
+  <div
+    class="{bounce ? 'bounce' : ''} dock_item"
+    on:click={() => {
+      openApp(app.component, app.id);
+      bouncefunc();
+    }}
+  >
+    <Icon icon={app.icon} />
+  </div>
+{/if}
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+{#if link !== ""}
+  <div
+    class="{bounce ? 'bounce' : ''} dock_item"
+    on:click={() => {
+      bouncefunc();
+    }}
+  >
+    <a href={link} target="_blank">
+      <Icon icon={linkicon} />
+    </a>
+  </div>
+{/if}
 
 <style>
   div.dock_item {
@@ -51,6 +69,7 @@
   :global(div.dock_item svg) {
     height: 2rem;
     width: 2rem;
+    color: white;
   }
   .bounce {
     animation: anim 0.5s ease-in-out;

@@ -8,6 +8,13 @@
   {#each $apps as app}
     <DockItem {app} />
   {/each}
+
+  <DockItem link="https://github.com/TheoIsDumb/TheoOS" linkicon="ph:code" />
+
+  <DockItem
+    link="https://github.com/TheoIsDumb"
+    linkicon="simple-icons:github"
+  />
 </div>
 
 <style>
