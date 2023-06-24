@@ -1,7 +1,12 @@
 <script>
 	export let commandsFormatted;
-	import { fade } from 'svelte/transition';
+	import { fade } from "svelte/transition";
 </script>
+
+<div class="splash flex flex-ac flex-jc flex-dirc" transition:fade>
+	Available commands are:
+	<span>{commandsFormatted}</span>
+</div>
 
 <style>
 	div.splash {
@@ -12,10 +17,3 @@
 		width: inherit;
 	}
 </style>
-
-<div
-	class="splash flex flex-ac flex-jc"
-	transition:fade>
-		Available commands are:<br>
-		{commandsFormatted}.
-</div>
