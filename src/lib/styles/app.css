@@ -31,6 +31,10 @@
     font-family: "Inter Tight", sans-serif;
 }
 
+html {
+  background: black;
+}
+
 body {
     margin: 0;
     width: 100dvw;
