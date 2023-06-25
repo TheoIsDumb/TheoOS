@@ -1,17 +1,24 @@
 <script>
-    import strftime from 'strftime';
-    let date = strftime("%Y %B %d %A %T");
+    let date = new Date().toLocaleString("en-US", {
+        dateStyle: "full",
+        timeStyle: "medium",
+        hour12: false,
+    });
 
     setInterval(() => {
-        date = strftime("%Y %B %d %A %T");
+        date = new Date().toLocaleString("en-US", {
+            dateStyle: "full",
+            timeStyle: "medium",
+            hour12: false,
+        });
     }, 1000);
 </script>
 
-<span style:font-weight=600>{date}</span>
+<span style:font-weight="600">{date}</span>
 
 <style>
     span {
-        cursor:default;
+        cursor: default;
     }
     @media (max-width: 1000px) {
         span {

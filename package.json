@@ -17,7 +17,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@neodrag/svelte": "^2.0.3",
-		"strftime": "^0.10.1"
+		"@neodrag/svelte": "^2.0.3"
 	}
 }
