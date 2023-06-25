@@ -73,7 +73,4 @@
         font-style: italic;
         color: burlywood;
     }
-    span {
-        font-size: 0.5rem;
-    }
 </style>
