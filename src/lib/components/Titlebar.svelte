@@ -5,12 +5,12 @@
 
     const closeApp = () => {
         $openedApps = $openedApps.filter((item) => item.id !== title);
-    }
+    };
 </script>
 
 <div class="titlebar flex">
-        <button on:click={closeApp}>✕</button>
-        <span>{title}</span>
+    <button on:click={closeApp}>✕</button>
+    <span>{title}</span>
 </div>
 
 <style>
@@ -18,7 +18,6 @@
         position: absolute;
         top: 0.4rem;
         width: 100%;
-        justify-content: start;
         cursor: grab;
         gap: 0.5rem;
         padding-left: 0.5rem;

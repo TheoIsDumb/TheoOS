@@ -31,12 +31,12 @@
     border-radius: 0.5rem !important;
     overflow: auto;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 540px) {
     div#parent {
       width: 100%;
     }
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 540px) {
     div#parent {
       width: var(--lg-width);
     }
