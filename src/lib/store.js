@@ -6,6 +6,7 @@ import RizzMeter from '/src/routes/apps/RizzMeter.svelte';
 import Browser from '/src/routes/apps/Browser.svelte';
 import Notes from '/src/routes/apps/Notes.svelte';
 import About from '/src/routes/apps/About.svelte';
+import DateCalc from '/src/routes/apps/DateCalc.svelte';
 
 export let openedApps = writable([]);
 
@@ -26,6 +27,11 @@ export let apps = readable([
         id: "Browser",
         component: Browser,
         icon: "logos:internetexplorer"
+    },
+    {
+        id: "DateCalc",
+        component: DateCalc,
+        icon: "openmoji:calendar"
     },
     {
         id: "RizzMeter",
