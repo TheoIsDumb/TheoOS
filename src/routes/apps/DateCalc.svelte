@@ -39,7 +39,6 @@
         <div class="input flex flex-jc">
             <div class="input-wrapper flex flex-ac">
                 <input type="date" bind:value={first} />
-                <span>(MM-DD-YYYY)</span>
                 <input type="date" bind:value={last} />
             </div>
         </div>
