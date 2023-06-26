@@ -13,7 +13,7 @@
   {/each}
 </div>
 
-<Dock/>
+<Dock />
 
 <style>
   div {
@@ -21,17 +21,6 @@
     height: 100dvh;
     position: relative;
     overflow: hidden;
-  }
-
-  @media (max-width: 1920px) {
-    div {
-      background: url("/wall/1080.avif") fixed center / cover;
-    }
-  }
-
-  @media (min-width: 2100px) {
-    div {
-      background: url("/wall/4k.avif") fixed center / cover;
-    }
+    background: url("/wall/4k.avif") fixed center / cover;
   }
 </style>
