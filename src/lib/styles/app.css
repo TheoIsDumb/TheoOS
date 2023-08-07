@@ -31,63 +31,11 @@
     font-family: "Inter Tight", sans-serif;
 }
 
-html {
-  background: black;
-}
-
-body {
-    margin: 0;
-    width: 100dvw;
-    height: 100dvh;
-    overflow: hidden;
-}
-
-.blur {
-        background-color: #100f0f61;
-        backdrop-filter: blur(10px);
-        color: white;
-}
-
-.shutdown_blur {
-        background-color: rgba(4, 4, 4, 0.584);
-        color: white;
-        backdrop-filter: blur(10px);
-}
-
-.fullscreen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100dvh;
-        width: 100dvw;
-        gap: 1rem;
-        z-index: 100;
-}
-
-.dark {
-  background-color: #131313;
-  color: white;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-jc {
-  justify-content: center;
-}
-
-.flex-ac {
-  align-items: center;
-}
-
-.flex-dirc {
-  flex-direction: column;
-}
-
 .content {
   height: inherit;
   width: inherit;
   overflow: auto;
   gap: 1rem;
 }
+
+.glow:hover { filter: drop-shadow(0 0 0.3rem white);}

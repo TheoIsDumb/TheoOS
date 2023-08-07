@@ -10,34 +10,11 @@
     }
 </script>
 
-<div
-    id="shutdown"
-    class="fullscreen shutdown_blur flex flex-jc flex-ac flex-dirc"
-    transition:fade>
-        <div style:font-style=italic>anganeyang poyaalo</div>
+<div class="fixed top-0 left-0 w-[100dvw] h-[100dvh] gap-4 z-[10] backdrop-blur bg-[#04040480] text-white flex flex-col justify-center items-center" transition:fade>
+        <div class="italic">anganeyang poyaalo</div>
 
-        <Icon icon="noto:pleading-face"/>
+        <Icon class="h-60 w-60" icon="noto:pleading-face"/>
 
-        <button on:click={closeApp}>I won't go</button>
+        <button class="px-5 py-1 text-black bg-white cursor-pointer rounded transition duration-300 hover:bg-blue-500 hover:text-white"
+            on:click={closeApp}>I won't go</button>
 </div>
-
-<style>
-    div#shutdown :global(svg) {
-        height: 15rem;
-        width: 15rem;
-    }
-
-    button {
-        all: unset;
-        padding: 0.3rem 1.3rem;
-        color: black;
-        background-color: white;
-        border-radius: 0.2rem;
-        cursor: pointer;
-        transition: all 0.4s;
-    }
-    button:hover {
-        background-color: dodgerblue;
-        color: white;
-    }
-</style>

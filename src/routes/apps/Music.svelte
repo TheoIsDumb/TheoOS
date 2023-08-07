@@ -30,7 +30,7 @@
     <Titlebar {title} />
 
     <div class="content">
-        <div class="img" />
+        <div class="img w-full h-4/5 bg-cover" />
         <audio
             src="/divewithme.mp3"
             bind:currentTime
@@ -38,43 +38,40 @@
             bind:duration
         />
 
-        <div id="box" class="flex flex-dirc flex-ac">
-            <div class="info flex flex-dirc">
-                <span id="title">Dive With Me</span>
-                <span id="artist">Ramgopal Harikrishnan</span>
+        <div class="flex items-center flex-col fixed bottom-1 w-full bg-white">
+            <div class="info flex flex-col text-center">
+                <span class="title font-semibold text-base">Dive With Me</span>
+                <span class="artist text-sm">Ramgopal Harikrishnan</span>
             </div>
 
-            <div class="progress_time flex flex-ac">
-                <span>{format(currentTime)}</span>
+            <div class="progress_time flex items-center w-full gap-2 px-2">
+                <span class="text-sm">{format(currentTime)}</span>
 
-                <div class="progress flex flex-ac">
+                <div class="progress flex items-center w-full bg-[gainsboro] rounded h-1">
                     <div
-                        class="progessbar"
+                        class="progessbar rounded bg-blue-500"
                         style="--progress: {currentTime / duration}%"
                     />
                 </div>
 
-                <span>{format(duration)}</span>
+                <span class="text-sm">{format(duration)}</span>
             </div>
 
-            <div class="buttons">
-                <button
-                    on:click={() => {
-                        paused = !paused;
-                    }}
-                >
+            <div class="buttons flex">
+                <button class="text-blue-500"
+                    on:click={() => paused = !paused } >
                     {#if paused}
-                        <Icon icon="fluent:play-32-regular" />
+                        <Icon class="h-8 w-8" icon="fluent:play-32-regular" />
                     {:else}
-                        <Icon icon="fluent:pause-32-regular" />
+                        <Icon class="h-8 w-8" icon="fluent:pause-32-regular" />
                     {/if}
                 </button>
 
-                <a
+                <a class="text-blue-500"
                     href="https://youtube.com/watch?v=DPgFHYyHNa8"
                     target="_blank"
                 >
-                    <Icon icon="fluent:open-32-regular" />
+                    <Icon class="h-8 w-8" icon="fluent:open-32-regular" />
                 </a>
             </div>
         </div>
@@ -82,55 +79,6 @@
 </App>
 
 <style>
-    div.img {
-        width: 100%;
-        height: 80%;
-        background: url("/divewithme.avif");
-        background-size: cover;
-    }
-    div#box {
-        position: fixed;
-        bottom: 0.3rem;
-        width: 100%;
-        background-color: white;
-    }
-    .progress_time {
-        width: 100%;
-        gap: 0.5rem;
-        padding: 0 0.5rem;
-    }
-    .progress_time span {
-        font-size: 0.7rem;
-    }
-    div.info {
-        text-align: center;
-    }
-    span#title {
-        font-weight: 600;
-        font-size: 1rem;
-    }
-    span#artist {
-        font-size: 0.7rem;
-    }
-    .progress {
-        width: 100%;
-        background-color: gainsboro;
-        border-radius: 0.3rem;
-        height: 0.3rem;
-    }
-    .progessbar {
-        width: calc(100 * var(--progress));
-        height: inherit;
-        border-radius: inherit;
-        background-color: dodgerblue;
-    }
-    button,
-    a {
-        all: unset;
-        color: dodgerblue;
-    }
-    div.buttons :global(svg) {
-        height: 2rem;
-        width: 2rem;
-    }
+    div.img { background: url("/divewithme.avif"); }
+    .progessbar { width: calc(100 * var(--progress)); }
 </style>

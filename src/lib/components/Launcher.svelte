@@ -10,60 +10,20 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-  class="fullscreen flex flex-jc flex-ac flex-dirc shutdown_blur"
+  class="fixed top-0 left-0 w-[100dvw] h-[100dvh] gap-4 z-[10] flex flex-col justify-center items-center backdrop-blur bg-[#04040480] text-white"
   transition:fade
   on:click|capture|self={closeLauncher}
 >
-  <div class="inner flex flex-dirc">
-    <span>{$userName ? `welcome, ${$userName}!` : "welcome!"}</span>
+  <div class="inner flex flex-col h-[100dvh] my-4 gap-4 overflow-auto [scrollbar-width:thin] relative">
+    <span class="text-center text-4xl font-semibold">{$userName ? `welcome, ${$userName}!` : "welcome!"}</span>
 
-    <div class="apps">
+    <div class="apps grid grid-cols-2 xl:grid-cols-4">
       {#each $apps as app}
         <LauncherItem {app} />
       {/each}
     </div>
 
-    <button on:click={closeLauncher} class="close">✕</button>
+    <button on:click={closeLauncher}
+    class="close absolute bottom-4 right-4 text-2xl cursor-pointer hover:scale-110">✕</button>
   </div>
 </div>
-
-<style>
-  div.inner {
-    height: 100dvh;
-    margin: 1rem auto;
-    gap: 1rem;
-    overflow: auto;
-    scrollbar-width: thin;
-    position: relative;
-  }
-  span {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
-  }
-  div.apps {
-    height: 90%;
-    margin: 1px auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 0.5rem;
-  }
-  button.close {
-    all: unset;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  button.close:hover {
-    transform: scale(1.1);
-  }
-  @media (max-width: 1000px) {
-    div.apps {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-</style>

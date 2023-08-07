@@ -31,46 +31,14 @@
 <App {...AppDetails}>
     <Titlebar {title} />
 
-    <div class="content flex flex-jc flex-ac flex-dirc">
-        <div class="num flex flex-jc flex-ac">
+    <div class="content flex flex-col justify-center items-center gap-2">
+        <div class="num flex justify-center items-center text-[7rem] h-full w-full italic text-[burlywood]">
             {first && last ? Math.round($diff) : 0}
         </div>
 
-        <div class="input flex flex-jc">
-            <div class="input-wrapper flex flex-ac">
-                <input type="date" bind:value={first} />
-                <input type="date" bind:value={last} />
-            </div>
+        <div class="input flex justify-between w-full fixed bottom-0 left-0 px-2 mb-2">
+            <input class="[outline:0] border-zinc-500 border rounded focus:bg-gray-300" type="date" bind:value={first} />
+            <input class="[outline:0] border-zinc-500 border rounded focus:bg-gray-300" type="date" bind:value={last} />
         </div>
     </div>
 </App>
-
-<style>
-    div.content {
-        gap: 0.5rem;
-    }
-    input {
-        outline: 0;
-    }
-    input:focus {
-        border: 2px solid burlywood;
-    }
-    div.input {
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-    }
-    div.input-wrapper {
-        width: 96%;
-        justify-content: space-between;
-        padding: 0.5rem;
-    }
-    div.num {
-        font-size: 7rem;
-        height: 100%;
-        width: 100%;
-        font-style: italic;
-        color: burlywood;
-    }
-</style>

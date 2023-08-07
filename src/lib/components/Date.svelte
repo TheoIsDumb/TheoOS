@@ -14,15 +14,4 @@
     }, 1000);
 </script>
 
-<span style:font-weight="600">{date}</span>
-
-<style>
-    span {
-        cursor: default;
-    }
-    @media (max-width: 1000px) {
-        span {
-            font-size: 0.8rem;
-        }
-    }
-</style>
+<span class="font-semibold cursor-default text-sm xl:text-base">{date}</span>

@@ -28,43 +28,16 @@
 <App {...AppDetails}>
     <Titlebar {title}/>
 
-    <div class="content flex flex-jc flex-ac flex-dirc">
-        <span id="num">{num}</span>
+    <div class="content flex flex-col justify-center items-center gap-2">
+        <span class="text-[burlywood] text-9xl italic">{num}</span>
 
-        <label for="name">Enter name:<br>
-            <input type="text" for="name" bind:value={name}>
+        <label for="name" class="text-center">Enter name:<br>
+            <input class="[outline:0] border transition duration-300 border-zinc-700 focus:border-green-400 rounded" type="text" for="name" bind:value={name}>
         </label>
 
-        <button on:click={calc}>Find Rizz!</button>
+        <button class="bg-[burlywood] text-white border-0 rounded px-5 py-1 cursor-pointer"
+            on:click={calc}>Find Rizz!</button>
 
-        <sup>Hint: Enter Ram/Theo</sup>
+        <sub>Hint: Enter Ram/Theo</sub>
     </div>
 </App>
-
-<style>
-    div.content {
-        gap: 0.5rem;
-    }
-    label {
-        text-align: center;
-    }
-    input {
-        outline: 0;
-    }
-    input:focus {
-        border: 2px solid burlywood;
-    }
-    span#num {
-        color: burlywood;
-        font-size: 8rem;
-        font-style: italic;
-    }
-    button {
-        background-color: burlywood;
-        color: white;
-        border: 0;
-        border-radius: 0.3rem;
-        padding: 0.2rem 1.3rem;
-        cursor: pointer;
-    }
-</style>

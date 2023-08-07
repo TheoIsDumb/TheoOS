@@ -9,35 +9,19 @@
 
 <App>
         <Titlebar {title}/>
-        <div class="content flex flex-ac flex-jc flex-dirc">
+        <div class="content flex flex-col items-center justify-center">
             <Logo/>
 
-            <span id="title">theoOS</span>
-            <span style:text-align=center style:font-size=0.8rem>(yes, i drew something random<br>
-                and called it a logo hehe)</span>
+            <span class="text-3xl font-semibold">theoOS</span>
+            <span class="text-center text-sm">(yes, i drew something random<br>and called it a logo hehe)</span>
 
-            <a href="https://github.com/TheoIsDumb/TheoOS"
-            target="_blank" noreferrer>
+            <a class="px-3 py-1 rounded bg-white text-black"
+                href="https://github.com/TheoIsDumb/TheoOS" target="_blank" noreferrer>
                 source code
             </a>
 
-            <span style:font-size=1rem>Made with Svelte.
+            <span class="text-base flex items-center">Made with Svelte.
                 <Icon icon="vscode-icons:file-type-svelte"/>
             </span>
         </div>
 </App>
-
-<style>
-    #title {
-        font-size: 2rem;
-        font-weight: 600;
-    }
-    
-    a {
-        text-decoration: none;
-        color: black;
-        background-color: white;
-        padding: 0.3rem 0.8rem;
-        border-radius: 0.3rem;
-    }
-</style>

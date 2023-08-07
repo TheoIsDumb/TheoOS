@@ -8,26 +8,7 @@
     };
 </script>
 
-<div class="titlebar flex">
-    <button on:click={closeApp}>✕</button>
+<div class="titlebar flex absolute top-1 w-full cursor-grab gap-2 pl-2">
+    <button class="cursor-pointer transition hover:text-rose-500" on:click={closeApp}>✕</button>
     <span>{title}</span>
 </div>
-
-<style>
-    div.titlebar {
-        position: absolute;
-        top: 0.4rem;
-        width: 100%;
-        cursor: grab;
-        gap: 0.5rem;
-        padding-left: 0.5rem;
-    }
-    button {
-        all: unset;
-        cursor: pointer;
-        transition: 0.5s;
-    }
-    button:hover {
-        color: rgb(252, 105, 105);
-    }
-</style>

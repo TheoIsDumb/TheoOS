@@ -22,18 +22,18 @@
 
 	function neofetch() {
 		return `<br>
-		<div class="neofetch flex flex-ac" style="gap: 1rem;">
-			<img src="/logo.svg" alt="logo" width="100rem" height="100rem"/>
+		<div class="neofetch flex items-center gap-4">
+			<img src="/logo.svg" alt="logo" class="w-1/4 h-1/4"/>
 			<div class="text">
 				<b>os:</b> theoOS<br>
 				<b>powered by:</b>
-					<a style="color: white;" href="https://kit.svelte.dev" target="_blank">SvelteKit</a><br>
+					<a class="text-white" href="https://kit.svelte.dev" target="_blank">SvelteKit</a><br>
 				<b>created by:</b>
-					<a style="color: white;" href="https://github.com/TheoIsDumb" target="_blank">Theo</a><br>
+					<a class="text-white" href="https://github.com/TheoIsDumb" target="_blank">Theo</a><br>
 				<b>source code:</b>
-					<a style="color: white;" href="https://github.com/TheoIsDumb/TheoOS" target="_blank">Github</a><br>
+					<a class="text-white" href="https://github.com/TheoIsDumb/TheoOS" target="_blank">Github</a><br>
 				<b>courtesy:</b>
-					<a style="color: white;" href="https://vkdbois.xyz" target="_blank">vkdbois.xyz</a><br>
+					<a class="text-white" href="https://vkdbois.xyz" target="_blank">vkdbois.xyz</a><br>
 			</div>
 		</div>
 		`
@@ -51,7 +51,7 @@
 		} else if (input === "clear") {
 			outputs = [];
 		} else {
-			outputs = [...outputs, `${input}: <span style="color: red;">command not found</span>`];
+			outputs = [...outputs, `${input}: <span class="text-rose-500 font-semibold">command not found</span>`];
 		}
 	}
 	
@@ -67,53 +67,23 @@
 
 <App {...AppDetails}>
     <Titlebar {title}/>
-    <div class="content flex flex-ac flex-jc flex-dirc">
-        <div class="output" bind:this={outputContainer}>
+    <div class="content flex flex-col justify-center items-center gap-2">
+        <div class="output w-full mt-8 px-4 pb-8 h-[90%] overflow-auto relative"
+			bind:this={outputContainer}>
 		{#if outputs.length === 0}
 					<Splash {commandsFormatted}/>
 				{/if}
 		
 		{#each outputs as output}
 			<div transition:fade>
-				<span style:color=slateblue>>>></span>
+				<span class="text-blue-400 font-semibold">>>></span>
 					{@html output}
 		</div>
 		{/each}
 	</div>
 	
-	<div class="input flex flex-jc flex-ac">$
-		<input type="text" on:keypress={handleInput}/>
+	<div class="input flex justify-center items-center border-t-2 border-blue-500 h-[10%] w-full px-2 gap-2">$
+		<input class="w-full bg-transparent m-0 [outline:0] p-0 border-0"
+			type="text" on:keypress={handleInput}/>
     </div>
 </App>
-
-<style>
-    div.content {
-        gap: 0.5rem;
-    }
-    div.output {
-		width: 100%;
-        margin-top: 2rem;
-        padding: 0 1rem;
-		padding-bottom: 2rem;
-		height: 90%;
-		overflow: auto;
-		position: relative;
-	}
-	div.input {
-		background: #1a1a1d;
-		border-top: 3px solid darkslateblue;
-		height: 10%;
-		width: 100%;
-		padding: 0 0.4rem;
-		gap: 0.4rem;
-	}
-	div.input input {
-		width: 100%;
-		background: transparent;
-		color: #818add;
-		margin: 0;
-		outline: 0;
-		padding: 0;
-		border: 0;
-	}
-</style>

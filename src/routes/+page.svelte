@@ -9,42 +9,16 @@
     } 
 </script>
 
-<div class="fullscreen dark flex flex-jc flex-ac flex-dirc">
-        <h1>what's your name?</h1>
+<div class="fixed top-0 left-0 w-[100dvw] h-[100dvh] gap-6 z-[10] bg-zinc-950 text-white flex flex-col justify-center items-center">
+        <h1 class="text-3xl font-bold">what's your name?</h1>
         <input type="text"
+        class="p-2 bg-transparent border-2 border-white rounded [outline:0] text-white focus:border-blue-400 transition"
         bind:value={$userName}
         on:keypress={jao}
         autocomplete="off">
 
-        {#if $userName}
-            <a href="/desktop">Go!</a>
-        {:else}
-            <a style:pointer-events=none style:background=darkgray href="/desktop">Go!</a>
-        {/if}
+        <a href="/desktop"
+            class="px-6 py-1 rounded text-2xl transition hover:bg-blue-400
+            {$userName ? 'bg-blue-500' : 'pointer-events-none bg-zinc-700'}">
+        Go!</a>
 </div>
-
-<style>
-    input {
-        padding: 0.5rem;
-        background-color: transparent;
-        border: 2px solid white;
-        border-radius: 0.3rem;
-        outline: 0;
-        color: white;
-    }
-    input:focus {
-        border: 2px solid dodgerblue;
-    }
-    a {
-        background: dodgerblue;
-        text-decoration: none;
-        color: white;
-        padding: 0.5rem 1.5rem;
-        border-radius: 0.3rem;
-        font-size: 1.4rem;
-        font-weight: normal;
-    }
-    a:hover {
-        background: rgb(26, 129, 233);
-    }
-</style>

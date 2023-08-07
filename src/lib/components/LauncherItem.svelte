@@ -27,42 +27,8 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="item flex flex-jc flex-ac flex-dirc"
+<div class="item flex flex-col justify-center items-center h-32 w-32 xl:h-40 xl:w-40 text-white rounded relative cursor-pointer transition duration-300 hover:scale-110 active:bg-[#ffffff30]"
 on:click={() => openApp(app.component, app.id)}>
-    <Icon icon={app.icon}/>
-    <span>{app.id}</span>
-    </div>
-
-<style>
-    div.item {
-        height: 10rem;
-        width: 10rem;
-        color: white;
-        border-radius: 0.2rem;
-        cursor: pointer;
-        position: relative;
-        transition: transform 0.5s;
-        border-radius: 0.3rem;
-    }
-    @media (max-width: 1000px) {
-        div.item {
-            height: 8rem;
-            width: 8rem;
-        }
-    }
-    div.item:hover {
-        transform: scale(1.1);
-    }
-    div.item:active {
-        background-color: rgba(0, 123, 255, 0.384);
-    }
-    div.item span {
-        position: absolute;
-        bottom: 0.2rem;
-        font-size: 0.8rem;
-    }
-    div.item :global(svg) {
-        height: 4rem;
-        width: 4rem;
-    }
-</style>
+    <Icon icon={app.icon} class="h-16 w-16"/>
+    <span class="absolute bottom-1 text-sm">{app.id}</span>
+</div>

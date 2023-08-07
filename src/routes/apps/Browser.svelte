@@ -26,31 +26,8 @@
 
 <App {...AppDetails}>
   <Titlebar {title} />
-  <div class="content flex flex-jc flex-ac flex-dirc">
-    <input type="text" value={url} on:keypress={setURL} />
-    <iframe src={url} title={url} />
+  <div class="content flex flex-col justify-center items-center gap-1 w-full p-1 pt-9">
+    <input class="w-full [outline:0] focus:border-2 h-[5%] bg-transparent border border-blue-500 text-white p-1" type="text" value={url} on:keypress={setURL} />
+    <iframe class="w-full border-0 h-[95%]" src={url} title={url} />
   </div>
 </App>
-
-<style>
-  div.content {
-    padding: 45px 0.2rem 0.2rem 0.2rem;
-    gap: 0.2rem;
-    width: 100%;
-  }
-  input,
-  iframe {
-    width: 100%;
-  }
-  input {
-    height: 5%;
-    background: transparent;
-    border: 1px solid dodgerblue;
-    color: white;
-    padding: 0.2rem;
-  }
-  iframe {
-    border: 0;
-    height: 95%;
-  }
-</style>

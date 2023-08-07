@@ -18,27 +18,7 @@
   style:height
   style="--lg-width: {width}"
   style:inset
-  id="parent"
+  class="resize absolute rounded-lg overflow-auto shadow-2xl w-full md:w-[var(--lg-width)]"
 >
   <slot />
 </div>
-
-<style>
-  div#parent {
-    resize: both;
-    position: absolute;
-    box-shadow: 0 0 0.8rem darkslategray;
-    border-radius: 0.5rem !important;
-    overflow: auto;
-  }
-  @media (max-width: 540px) {
-    div#parent {
-      width: 100%;
-    }
-  }
-  @media (min-width: 540px) {
-    div#parent {
-      width: var(--lg-width);
-    }
-  }
-</style>

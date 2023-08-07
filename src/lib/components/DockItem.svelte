@@ -35,13 +35,13 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 {#if app !== ""}
   <div
-    class="{bounce ? 'bounce' : ''} dock_item"
+    class="{bounce ? 'bounce' : ''} dock_item transition duration-300 hover:scale-125"
     on:click={() => {
       openApp(app.component, app.id);
       bouncefunc();
     }}
   >
-    <Icon icon={app.icon} />
+    <Icon icon={app.icon} class="h-8 w-8"/>
   </div>
 {/if}
 
@@ -54,33 +54,15 @@
     }}
   >
     <a href={link} target="_blank">
-      <Icon icon={linkicon} />
+      <Icon icon={linkicon} class="h-8 w-8 text-white"/>
     </a>
   </div>
 {/if}
 
 <style>
-  div.dock_item {
-    transition: all 0.3s;
-  }
-  div.dock_item:hover {
-    transform: scale(1.2);
-  }
-  :global(div.dock_item svg) {
-    height: 2rem;
-    width: 2rem;
-    color: white;
-  }
-  .bounce {
-    animation: anim 0.5s ease-in-out;
-  }
+  .bounce { animation: anim 0.5s ease-in-out; }
   @keyframes anim {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-2rem);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2rem); }
   }
 </style>

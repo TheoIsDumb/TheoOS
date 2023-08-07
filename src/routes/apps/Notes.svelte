@@ -18,44 +18,11 @@
 
 <App {...AppDetails}>
     <Titlebar {title} />
-    <div class="content flex flex-jc flex-ac flex-dirc">
-        <textarea bind:value={data} />
+    <div class="content flex flex-col items-center justify-center p-1 pt-11 gap-1 w-full">
+        <textarea class="h-full w-full bg-transparent border-0 rounded-[inherit] text-white [outline:0] [scrollbar-width:thin]"
+            bind:value={data} />
     </div>
 
-    <button on:click={save}>Save</button>
+    <button class="fixed top-2 right-2 text-white bg-[dodgerblue] rounded px-3 py-[0.2rem] text-sm transition duration-300 cursor-pointer hover:bg-[darkslateblue]"
+        on:click={save}>Save</button>
 </App>
-
-<style>
-    div.content {
-        padding: 45px 0.2rem 0.2rem 0.2rem;
-        gap: 0.2rem;
-        width: 100%;
-    }
-    textarea {
-        height: 100%;
-        width: 100%;
-        background-color: transparent;
-        border: 0;
-        border-radius: inherit;
-        color: white;
-        outline: 0;
-        scrollbar-width: thin;
-    }
-    button {
-        all: unset;
-        position: fixed;
-        top: 0.5rem;
-        right: 0.5rem;
-        color: white;
-        background-color: dodgerblue;
-        border-radius: 0.3rem;
-        padding: 0.2rem 0.8rem;
-        font-size: 0.8rem;
-        transition: all 0.3s;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: darkslateblue;
-        color: white;
-    }
-</style>

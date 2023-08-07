@@ -24,14 +24,14 @@
     };
 </script>
 
-<div class="panel flex flex-jc flex-ac" in:fly={{ y: -50, delay: 300 }}>
-    <div class="inner-container flex flex-ac">
-        <button
+<div class="panel flex items-center h-8 w-[100dvw] fixed top-0 backdrop-blur bg-[#100f0f61] text-white justify-between px-4"
+    in:fly={{ y: -50, delay: 300 }}>
+        <button class="transition cursor-pointer"
             on:click={() => {
                 openApp(Launcher, "Launcher");
             }}
         >
-            <Icon icon="ph:circle-bold" />
+            <Icon class="transition cursor-pointer glow" icon="ph:circle-bold"/>
         </button>
 
         <Date />
@@ -41,40 +41,6 @@
                 openApp(Shutdown, "Shutdown");
             }}
         >
-            <Icon icon="ph:power-bold" />
+            <Icon class="transition cursor-pointer glow" icon="ph:power-bold"/>
         </button>
-    </div>
 </div>
-
-<style>
-    div.panel {
-        background-color: #100f0f61;
-        height: 2.1rem;
-        width: 100dvw;
-        position: fixed;
-        top: 0;
-        backdrop-filter: blur(10px);
-        color: white;
-    }
-    div.inner-container {
-        width: 96%;
-        justify-content: space-between;
-    }
-    button {
-        all: unset;
-        width: 1rem;
-        height: 1rem;
-    }
-    div.panel :global(svg) {
-        transition: all 0.3s;
-        cursor: pointer;
-    }
-    div.panel :global(svg:hover) {
-        filter: drop-shadow(0 0 0.3rem white);
-    }
-    @media (max-width: 1000px) {
-        div.inner-container {
-            width: 90%;
-        }
-    }
-</style>
