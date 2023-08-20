@@ -1,17 +1,9 @@
 <script>
-    let date = new Date().toLocaleString("en-US", {
-        dateStyle: "full",
-        timeStyle: "medium",
-        hour12: false,
-    });
+    let time = new Date().toLocaleTimeString('en-US', { hour12: false }).replaceAll(':', ' ');
 
     setInterval(() => {
-        date = new Date().toLocaleString("en-US", {
-            dateStyle: "full",
-            timeStyle: "medium",
-            hour12: false,
-        });
-    }, 1000);
+        time = new Date().toLocaleTimeString('en-US', { hour12: false }).replaceAll(':', ' ');
+    })
 </script>
 
-<span class="font-semibold cursor-default text-sm xl:text-base">{date}</span>
+<span class="cursor-default">{time}</span>

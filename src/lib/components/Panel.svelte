@@ -24,7 +24,10 @@
     };
 </script>
 
-<div class="panel flex items-center h-8 w-[100dvw] fixed top-0 backdrop-blur bg-[#100f0f61] text-white justify-between px-4"
+<div class="panel flex items-center justify-between xl:flex-col
+    h-8 w-[100dvw] xl:w-10 xl:h-[calc(100dvh-2rem)] px-4 xl:py-4 xl:ml-3
+    fixed top-0 xl:top-1/2 xl:-translate-y-1/2
+    backdrop-blur bg-[#100f0f61] xl:bg-[#000000a3] xl:rounded-lg text-white"
     in:fly={{ y: -50, delay: 300 }}>
         <button class="transition cursor-pointer"
             on:click={() => {
