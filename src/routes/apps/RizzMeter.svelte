@@ -20,8 +20,6 @@
     }
 
     const AppDetails = {
-        backgroundColor: "white",
-        color: "black",
         height: "25rem",
         width: "20rem"
     }
@@ -30,11 +28,11 @@
 <App {...AppDetails}>
     <Titlebar {title}/>
 
-    <div class="content flex flex-col justify-center items-center gap-2">
-        <span class="text-[burlywood] text-9xl font-semibold">{num}</span>
+    <div class="content flex flex-col justify-center items-center gap-4">
+        <span class="text-blue-500 text-9xl font-semibold">{num}</span>
 
         <label for="name" class="text-center">Enter name:<br>
-            <input class="[outline:0] border transition duration-300 border-zinc-700 focus:border-green-400 rounded p-1"
+            <input class="[outline:0] border transition duration-300 text-center bg-transparent border-zinc-300 focus:border-blue-500 rounded p-1"
              type="text" for="name" bind:value={name}
              on:keypress={(e) => {
                 if (e.key === "Enter" && name !== "") {
@@ -44,7 +42,7 @@
              >
         </label>
 
-        <button class="bg-[burlywood] text-white border-0 rounded px-5 py-1 cursor-pointer"
+        <button class="bg-blue-500 text-white border-0 rounded px-5 py-1 cursor-pointer"
             on:click={calc}>Find Rizz!</button>
 
         <sub>Hint: Enter Vivek/Ram/Theo</sub>

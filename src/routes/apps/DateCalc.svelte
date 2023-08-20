@@ -21,8 +21,6 @@
     }
 
     const AppDetails = {
-        backgroundColor: "white",
-        color: "black",
         height: "25rem",
         width: "25rem",
     };
@@ -32,13 +30,13 @@
     <Titlebar {title} />
 
     <div class="content flex flex-col justify-center items-center gap-2">
-        <div class="num flex justify-center items-center text-[7rem] h-full w-full italic text-[burlywood]">
+        <div class="num flex justify-center items-center text-[7rem] h-full w-full italic text-blue-500 cursor-default">
             {first && last ? Math.round($diff) : 0}
         </div>
 
         <div class="input flex justify-between w-full fixed bottom-0 left-0 px-2 mb-2">
-            <input class="[outline:0] border-zinc-500 border rounded focus:bg-gray-300" type="date" bind:value={first} />
-            <input class="[outline:0] border-zinc-500 border rounded focus:bg-gray-300" type="date" bind:value={last} />
+            <input class="[outline:0] border-zinc-500 border bg-transparent rounded focus:border-blue-500" type="date" bind:value={first} />
+            <input class="[outline:0] border-zinc-500 border bg-transparent rounded focus:border-blue-500" type="date" bind:value={last} />
         </div>
     </div>
 </App>

@@ -27,7 +27,7 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="item flex flex-col justify-center items-center h-32 w-32 xl:h-40 xl:w-40 text-white rounded relative cursor-pointer transition duration-300 hover:scale-110 active:bg-[#ffffff30]"
+<div class="item flex flex-col justify-center items-center h-32 w-32 xl:h-40 xl:w-40 text-white relative cursor-pointer border-0 hover:border-2 border-zinc-400 rounded-2xl active:bg-[#ffffff30]"
 on:click={() => openApp(app.component, app.id)}>
     <Icon icon={app.icon} class="h-16 w-16"/>
     <span class="absolute bottom-1 text-sm">{app.id}</span>

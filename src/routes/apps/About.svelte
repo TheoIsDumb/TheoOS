@@ -15,7 +15,7 @@
             <span class="text-3xl font-semibold">theoOS</span>
             <span class="text-center text-sm">(yes, i drew something random<br>and called it a logo hehe)</span>
 
-            <a class="px-3 py-1 rounded bg-white text-black"
+            <a class="px-3 py-1 rounded bg-blue-500 text-white"
                 href="https://github.com/TheoIsDumb/TheoOS" target="_blank" noreferrer>
                 source code
             </a>

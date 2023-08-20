@@ -16,9 +16,9 @@
   style:background-color={backgroundColor}
   style:color
   style:height
-  style="--lg-width: {width}"
+  style="--lg-width: {width}; box-shadow: 0 0 0.5rem 0.1rem black"
   style:inset
-  class="resize absolute rounded-lg overflow-auto shadow-2xl w-full sm:w-[var(--lg-width)]"
+  class="resize absolute rounded-lg overflow-auto w-full sm:w-[var(--lg-width)]"
 >
   <slot />
 </div>

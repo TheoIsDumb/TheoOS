@@ -19,8 +19,6 @@
     }
 
     const AppDetails = {
-        backgroundColor: "white",
-        color: "black",
         height: "27rem",
         width: "21rem",
     };
@@ -38,7 +36,7 @@
             bind:duration
         />
 
-        <div class="flex items-center flex-col w-full bg-white fixed bottom-0 pb-2">
+        <div class="flex items-center flex-col w-full fixed bottom-0 pb-2">
             <div class="info flex justify-between items-center w-full px-4">
                 <span class="title font-semibold text-base">Dive With Me</span>
                 <span class="artist text-sm">Ramgopal Harikrishnan</span>
