@@ -7,6 +7,7 @@ import Browser from '/src/routes/apps/Browser.svelte';
 import Notes from '/src/routes/apps/Notes.svelte';
 import About from '/src/routes/apps/About.svelte';
 import DateCalc from '/src/routes/apps/DateCalc.svelte';
+import AspectRatioCalc from '/src/routes/apps/AspectRatioCalc.svelte';
 
 export let openedApps = writable([]);
 
@@ -32,6 +33,11 @@ export let apps = readable([
         id: "DateCalc",
         component: DateCalc,
         icon: "openmoji:calendar"
+    },
+    {
+        id: "AspectRatioCalc",
+        component: AspectRatioCalc,
+        icon: "icon-park:equal-ratio"
     },
     {
         id: "RizzMeter",
