@@ -4,16 +4,18 @@
 
     let title = "RizzMeter"
     let num = 0;
-    let name;
+    let name = "";
 
     const calc = () => {
         const query = name.toLowerCase()
-        if (query == "ram" || query === "ramgopal") {
-            num = "∞";
-        } else if (query == "theo") {
-            num = "👑"
+        if (query === "ram" || query === "ramgopal") {
+            num = '∞'
+        } else if (query === "theo") {
+            num = "💀"
+        } else if (query === "vivek") {
+            num = "👑🗿"
         } else {
-            num = Math.round(Math.random() * 100);
+            num = Math.round(Math.random() * 100)
         }
     }
 
@@ -29,15 +31,22 @@
     <Titlebar {title}/>
 
     <div class="content flex flex-col justify-center items-center gap-2">
-        <span class="text-[burlywood] text-9xl italic">{num}</span>
+        <span class="text-[burlywood] text-9xl font-semibold">{num}</span>
 
         <label for="name" class="text-center">Enter name:<br>
-            <input class="[outline:0] border transition duration-300 border-zinc-700 focus:border-green-400 rounded" type="text" for="name" bind:value={name}>
+            <input class="[outline:0] border transition duration-300 border-zinc-700 focus:border-green-400 rounded p-1"
+             type="text" for="name" bind:value={name}
+             on:keypress={(e) => {
+                if (e.key === "Enter" && name !== "") {
+                    calc()
+                }
+             } }
+             >
         </label>
 
         <button class="bg-[burlywood] text-white border-0 rounded px-5 py-1 cursor-pointer"
             on:click={calc}>Find Rizz!</button>
 
-        <sub>Hint: Enter Ram/Theo</sub>
+        <sub>Hint: Enter Vivek/Ram/Theo</sub>
     </div>
 </App>
