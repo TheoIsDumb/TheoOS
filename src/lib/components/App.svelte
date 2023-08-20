@@ -16,7 +16,7 @@
   style:background-color={backgroundColor}
   style:color
   style:height
-  style="--lg-width: {width}; box-shadow: 0 0 0.5rem 0.1rem black"
+  style="--lg-width: {width}; box-shadow: 0 0 0.8rem black"
   style:inset
   class="resize absolute rounded-lg overflow-auto w-full sm:w-[var(--lg-width)]"
 >

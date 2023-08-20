@@ -16,5 +16,5 @@
 <Dock />
 
 <style>
-  div.parent { background: url("/wall/purple.avif") fixed center / cover; }
+  div.parent { background: url("/wall/image.avif") fixed center / cover; }
 </style>
