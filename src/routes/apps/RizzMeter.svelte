@@ -11,7 +11,7 @@
         if (query == "ram" || query === "ramgopal") {
             num = "∞";
         } else if (query == "theo") {
-            num = "L"
+            num = "👑"
         } else {
             num = Math.round(Math.random() * 100);
         }
