@@ -21,16 +21,16 @@
     const AppDetails = {
         backgroundColor: "white",
         color: "black",
-        height: "29rem",
-        width: "23rem",
+        height: "27rem",
+        width: "21rem",
     };
 </script>
 
 <App {...AppDetails}>
     <Titlebar {title} />
 
-    <div class="content">
-        <div class="img w-full h-4/5 bg-cover" />
+    <div class="content flex flex-col">
+        <img src="/divewithme.avif" alt="artwork" class="mt-8 m-4 mb-0 rounded-lg">
         <audio
             src="/divewithme.mp3"
             bind:currentTime
@@ -38,18 +38,18 @@
             bind:duration
         />
 
-        <div class="flex items-center flex-col fixed bottom-1 w-full bg-white">
-            <div class="info flex flex-col text-center">
+        <div class="flex items-center flex-col w-full bg-white fixed bottom-0 pb-2">
+            <div class="info flex justify-between items-center w-full px-4">
                 <span class="title font-semibold text-base">Dive With Me</span>
                 <span class="artist text-sm">Ramgopal Harikrishnan</span>
             </div>
 
-            <div class="progress_time flex items-center w-full gap-2 px-2">
+            <div class="progress_time flex items-center w-full gap-2 px-4">
                 <span class="text-sm">{format(currentTime)}</span>
 
                 <div class="progress flex items-center w-full bg-[gainsboro] rounded h-1">
                     <div
-                        class="progessbar rounded bg-blue-500"
+                        class="progessbar rounded bg-blue-500 h-full"
                         style="--progress: {currentTime / duration}%"
                     />
                 </div>
@@ -61,9 +61,9 @@
                 <button class="text-blue-500"
                     on:click={() => paused = !paused } >
                     {#if paused}
-                        <Icon class="h-8 w-8" icon="fluent:play-32-regular" />
+                        <Icon class="h-8 w-8" icon="ion:play" />
                     {:else}
-                        <Icon class="h-8 w-8" icon="fluent:pause-32-regular" />
+                        <Icon class="h-8 w-8" icon="ion:pause" />
                     {/if}
                 </button>
 
@@ -71,7 +71,7 @@
                     href="https://youtube.com/watch?v=DPgFHYyHNa8"
                     target="_blank"
                 >
-                    <Icon class="h-8 w-8" icon="fluent:open-32-regular" />
+                    <Icon class="h-8 w-8" icon="fluent:open-24-filled" />
                 </a>
             </div>
         </div>
@@ -79,6 +79,5 @@
 </App>
 
 <style>
-    div.img { background: url("/divewithme.avif"); }
     .progessbar { width: calc(100 * var(--progress)); }
 </style>

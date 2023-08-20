@@ -18,7 +18,7 @@
   style:height
   style="--lg-width: {width}"
   style:inset
-  class="resize absolute rounded-lg overflow-auto shadow-2xl w-full md:w-[var(--lg-width)]"
+  class="resize absolute rounded-lg overflow-auto shadow-2xl w-full sm:w-[var(--lg-width)]"
 >
   <slot />
 </div>
