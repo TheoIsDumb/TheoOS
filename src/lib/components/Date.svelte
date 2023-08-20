@@ -6,4 +6,4 @@
     })
 </script>
 
-<span class="cursor-default">{time}</span>
+<span class="cursor-default text-center">{time}</span>
