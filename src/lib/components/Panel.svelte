@@ -4,8 +4,9 @@
     import Launcher from "./Launcher.svelte";
     import Date from "./Date.svelte";
     import Shutdown from "./Shutdown.svelte";
-
-    import Icon from "@iconify/svelte";
+    
+    import IconArch from '$lib/icons/IconArch.svelte'
+    import IconPower from '$lib/icons/IconPower.svelte'
 
     const check = (appName) => {
         for (let i = 0; i < $openedApps.length; i++) {
@@ -31,20 +32,13 @@
     backdrop-blur bg-[#000000a3] xl:rounded-lg text-white"
     in:fly={{ y: -50, delay: 300 }}>
         <button class="transition cursor-pointer"
-            on:click={() => {
-                openApp(Launcher, "Launcher");
-            }}
-        >
-            <Icon class="transition cursor-pointer glow" icon="mdi:arch"/>
+        on:click={() => { openApp(Launcher, "Launcher"); }}>
+            <IconArch />
         </button>
 
         <Date />
 
-        <button
-            on:click={() => {
-                openApp(Shutdown, "Shutdown");
-            }}
-        >
-            <Icon class="transition cursor-pointer glow" icon="ph:power-bold"/>
+        <button on:click={() => { openApp(Shutdown, "Shutdown"); }}>
+            <IconPower />
         </button>
 </div>

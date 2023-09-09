@@ -1,8 +1,8 @@
 <script>
-  import { openedApps } from "$lib/store.js";
-  import Panel from "$lib/components/Panel.svelte";
-  import Dock from "$lib/components/Dock.svelte";
-  import { scale, fade } from "svelte/transition";
+  import { openedApps } from "$lib/store.js"
+  import Panel from "$lib/components/Panel.svelte"
+  import Dock from "$lib/components/Dock.svelte"
+  import { scale } from "svelte/transition"
 </script>
 
 <div class="parent w-[100dvw] h-[100dvh] relative overflow-hidden" transition:scale>

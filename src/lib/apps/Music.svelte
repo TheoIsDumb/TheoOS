@@ -1,7 +1,10 @@
 <script>
     import Titlebar from "$lib/components/Titlebar.svelte";
     import App from "$lib/components/App.svelte";
-    import Icon from "@iconify/svelte";
+
+    import IconPlay from '$lib/icons/IconPlay.svelte'
+    import IconPause from '$lib/icons/IconPause.svelte'
+    import IconOpen from '$lib/icons/IconOpen.svelte'
 
     let title = "Music";
 
@@ -55,13 +58,13 @@
                 <span class="text-sm">{format(duration)}</span>
             </div>
 
-            <div class="buttons flex">
+            <div class="buttons flex gap-2">
                 <button class="text-blue-500"
                     on:click={() => paused = !paused } >
                     {#if paused}
-                        <Icon class="h-8 w-8" icon="ion:play" />
+                        <IconPlay />
                     {:else}
-                        <Icon class="h-8 w-8" icon="ion:pause" />
+                        <IconPause />
                     {/if}
                 </button>
 
@@ -69,7 +72,7 @@
                     href="https://youtube.com/watch?v=DPgFHYyHNa8"
                     target="_blank"
                 >
-                    <Icon class="h-8 w-8" icon="fluent:open-24-filled" />
+                <IconOpen />
                 </a>
             </div>
         </div>

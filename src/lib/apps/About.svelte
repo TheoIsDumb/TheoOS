@@ -2,7 +2,7 @@
     import Titlebar from "$lib/components/Titlebar.svelte";
     import App from "$lib/components/App.svelte";
     import Logo from "$lib/components/Logo.svelte";
-    import Icon from "@iconify/svelte";
+    import IconSvelte from '$lib/icons/IconSvelte.svelte'
 
     let title = "About"
 </script>
@@ -21,7 +21,7 @@
             </a>
 
             <span class="text-base flex items-center">Made with Svelte.
-                <Icon icon="vscode-icons:file-type-svelte"/>
+                <IconSvelte />
             </span>
         </div>
 </App>

@@ -1,10 +1,7 @@
 <script>
   export let app = "";
-  export let link = "";
-  export let linkicon = "";
 
   import { openedApps } from "$lib/store";
-  import Icon from "@iconify/svelte";
 
   const check = (appName) => {
     for (let i = 0; i < $openedApps.length; i++) {
@@ -41,21 +38,7 @@
       bouncefunc();
     }}
   >
-    <Icon icon={app.icon} class="h-8 w-8"/>
-  </div>
-{/if}
-
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-{#if link !== ""}
-  <div
-    class="{bounce ? 'bounce' : ''} dock_item"
-    on:click={() => {
-      bouncefunc();
-    }}
-  >
-    <a href={link} target="_blank">
-      <Icon icon={linkicon} class="h-8 w-8 text-white"/>
-    </a>
+    <svelte:component this={app.icon} />
   </div>
 {/if}
 
