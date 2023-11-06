@@ -33,7 +33,7 @@
 
 .content {
   height: inherit;
-  width: inherit;
+  width: 100%;
   overflow: auto;
   gap: 1rem;
 }
