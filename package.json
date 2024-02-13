@@ -10,6 +10,7 @@
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^5.1.0",
     "@sveltejs/kit": "^2.5.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.27",
     "svelte": "^4.2.10",
@@ -18,7 +19,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@neodrag/svelte": "^2.0.3",
-    "@sveltejs/vite-plugin-svelte": "^3.0.2"
+    "@neodrag/svelte": "^2.0.3"
   }
 }

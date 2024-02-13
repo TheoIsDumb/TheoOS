@@ -5,7 +5,7 @@ import { redirect } from "@sveltejs/kit"
 export async function handle({ event, resolve }) {
 	if (event.url.pathname.startsWith('/desktop')) {
         if (get(userName) === "") {
-            throw redirect(303, '/')
+            redirect(303, '/');
         }
 	}
 
