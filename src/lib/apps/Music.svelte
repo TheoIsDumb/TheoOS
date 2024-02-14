@@ -30,7 +30,7 @@
 <App {...AppDetails}>
     <Titlebar {title} />
 
-    <div class="content flex flex-col mt-8 gap-2 p-2 h-fit justify-between">
+    <div class="content flex flex-col mt-8 gap-2 p-2 h-fit">
         <img src="/divewithme.avif" alt="artwork" class="rounded-lg">
         <audio
             src="/divewithme.mp3"
