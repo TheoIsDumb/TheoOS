@@ -22,7 +22,7 @@
     }
 
     const AppDetails = {
-        height: "27rem",
+        // height: "27rem",
         width: "21rem",
     };
 </script>
@@ -30,8 +30,8 @@
 <App {...AppDetails}>
     <Titlebar {title} />
 
-    <div class="content flex flex-col">
-        <img src="/divewithme.avif" alt="artwork" class="mt-8 m-4 mb-0 rounded-lg">
+    <div class="content flex flex-col mt-8 gap-2 p-2 h-fit justify-between">
+        <img src="/divewithme.avif" alt="artwork" class="rounded-lg">
         <audio
             src="/divewithme.mp3"
             bind:currentTime
@@ -39,13 +39,13 @@
             bind:duration
         />
 
-        <div class="flex items-center flex-col w-full fixed bottom-0 pb-2">
-            <div class="info flex justify-between items-center w-full px-4">
+        <div class="flex items-center flex-col w-full">
+            <div class="info flex justify-between items-center w-full">
                 <span class="title font-semibold text-base">Dive With Me</span>
                 <span class="artist text-sm">Ramgopal Harikrishnan</span>
             </div>
 
-            <div class="progress_time flex items-center w-full gap-2 px-4">
+            <div class="progress_time flex items-center w-full gap-2">
                 <span class="text-sm">{format(currentTime)}</span>
 
                 <div class="progress flex items-center w-full bg-[gainsboro] rounded h-1">
@@ -58,7 +58,7 @@
                 <span class="text-sm">{format(duration)}</span>
             </div>
 
-            <div class="buttons flex gap-2">
+            <div class="buttons flex gap-2 mt-3">
                 <button class="text-blue-500"
                     on:click={() => paused = !paused } >
                     {#if paused}
