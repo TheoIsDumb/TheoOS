@@ -12,7 +12,7 @@
 <div
   in:scale
   out:fade={{ duration: 400 }}
-  use:draggable={{ handle: ".titlebar" }}
+  use:draggable={{ handle: ".titlebar", bounds: 'parent' }}
   style:background-color={backgroundColor}
   style:color
   style:height
